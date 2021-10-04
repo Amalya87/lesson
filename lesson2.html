@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Kids Lend</title>
+  <style>
+  .round {
+    border-radius: 100px; 
+    border: 3px solid green; 
+    box-shadow: 0 0 7px #666;
+  }
+
+.bg {
+    background-image: url(img/oblojka.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height:100vh;  /* responsive height */
+}
+  .container {
+    list-style:none;
+    margin: 0;
+    padding: 0;
+  }
+  .item {
+    padding: 5px;
+    width: 200px;
+    margin: 80px;
+
+    line-height: 150px;
+    font-weight: bold;
+    font-size: 1em;
+    text-align: center;
+  }
+
+  /*float layout*/
+  .float {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .float:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  .float-item {
+    float: left;
+  }
+
+
+  /*inline-block*/
+  .inline-b {
+    max-width:1200px;
+    margin:0 auto;
+  }
+  .inline-b-item {
+    display: inline-block;
+  }
+
+  /*Flexbox*/
+  .flex {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+  }
+</style>
+</head>
+<body class="bg" >
+
+  <h1 align="center" style="color:Black">Կրտսեր խմբի հրաշքներ</h1>
+
+  <div>
+    <ul id="ul-content" class="container float">
+
+      
+    <!--   <li class="item float-item">
+        <div>
+          <img src="img/nkar1.jpg" alt="" width="200" height="200" class="round" align="middle">
+          <span>Սոֆի 2 տարեկան</span>
+        </div>
+      </li>
+      <li class="item float-item">
+        <div> 
+          <img src="img/nkar2.jpg" alt="" width="200" height="200" class="round" align="middle">
+          <span>Նարեկ 2 տարեկան</span>
+        </div>
+      </li>
+      <li class="item float-item">
+        <div> 
+          <img src="img/nkar3.jpg" alt="" width="200" height="200" class="round" align="middle">
+          <span>Լյուսի 2 տարեկան</span>
+        </div>
+      </li>
+      <li class="item float-item">
+        <div> 
+          <img src="img/nkar4.jpg" alt="" width="200" height="200" class="round" align="middle">
+          <span>Մոնթե 1 տարեկան</span>
+        </div>
+      </li>
+      <li class="item float-item">
+       <div> 
+        <img src="img/nkar5.jpg" alt="" width="200" height="200" class="round" align="middle">
+        <span>Էվա 1 տարեկան</span> 
+      </div>
+    </li>
+    <li class="item float-item">
+     <div> 
+      <img src="img/nkar6.jpg" alt="" width="200" height="200" class="round" align="middle">
+      <span>Մանե 2 տարեկան</span>
+    </div>
+  </li>
+  <li class="item float-item">
+   <div> 
+    <img src="img/nkar7.jpg" alt="" width="200" height="200" class="round" align="middle">
+    <span>Լուսինե 2 տարեկան</span>
+  </div>
+</li>
+<li class="item float-item">
+  <div> 
+    <img src="img/nkar8.jpg" alt="" width="200" height="200" class="round" align="middle">
+    <span> Մարիամ 2 տարեկան</span>
+  </div>
+</li>
+<li class="item float-item">
+  <div> 
+    <img src="img/nkar9.jpg" alt="" width="200" height="200" class="round" align="middle">
+    <span>  Գեորգի 1 տարեկան</span> 
+  </div>
+</li>
+ -->
+
+</ul>
+</div>
+
+</body>
+<script type="text/javascript">
+  let users = [];
+  users.push({image:'img/nkar1.jpg',name:'Սոֆի',age:2})
+  users.push({image:'img/nkar2.jpg',name:'Նարեկ',age:2})
+  users.push({image:'img/nkar3.jpg',name:'Լյուսի',age:2})
+
+  users.push({image:'img/nkar4.jpg',name:'Մոնթե',age:1})
+
+  users.push({image:'img/nkar5.jpg',name:'Էվա',age:1})
+
+  users.push({image:'img/nkar6.jpg',name:'Մանե',age:2})
+
+  users.push({image:'img/nkar7.jpg',name:'Լուսինե',age:2})
+
+  users.push({image:'img/nkar8.jpg',name:'Մարիամ',age:2})
+  users.push({image:'img/nkar9.jpg',name:'Գեորգի',age:1})
+
+
+ 
+var htmlCode='';
+  for (var i = 0; i < users.length; i++) {
+     htmlCode += "<li class='item float-item'>"+
+  "<div>"+ 
+    "<img src='"+users[i].image+"' width='200' height='200' class='round' align='middle'>"+
+    "<span>  "+users[i].name+' '+ users[i].age+" տարեկան</span>"+ 
+ " </div>"+
+"</li>"
+   
+  }
+ document.getElementById("ul-content").innerHTML  = htmlCode
+
+</script>
+</html>
